@@ -1,0 +1,18 @@
+# Example Linux configuration for LACP and VLAN 10
+auto bond0
+iface bond0 inet static
+    address 192.168.10.10
+    netmask 255.255.255.0
+    gateway 192.168.10.1
+    bond-slaves eth0 eth1
+    bond-mode 802.3ad
+    bond-miimon 100
+    bond-downdelay 200
+    bond-updelay 200
+
+# VLAN config if required (if using VLAN interfaces)
+auto bond0.10
+iface bond0.10 inet static
+    address 192.168.10.10
+    netmask 255.255.255.0
+    gateway 192.168.10.1
